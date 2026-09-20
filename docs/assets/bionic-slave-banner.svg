@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360"
+     role="img" aria-label="Bionic Job Bridge — route coding jobs from Codex to Bionic">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="0.55" stop-color="#111A30"/>
+      <stop offset="1" stop-color="#191338"/>
+    </linearGradient>
+    <radialGradient id="glowCyan" cx="0.14" cy="0.18" r="0.62">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowViolet" cx="0.88" cy="0.9" r="0.62">
+      <stop offset="0" stop-color="#A78BFA" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#7DA2C9" fill-opacity="0.15"/>
+    </pattern>
+    <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity="0.0"/>
+      <stop offset="0.5" stop-color="#38BDF8" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="pillEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5B7BA6"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="360" rx="20" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="20" fill="url(#dots)"/>
+  <rect width="1200" height="360" rx="20" fill="url(#glowCyan)"/>
+  <rect width="1200" height="360" rx="20" fill="url(#glowViolet)"/>
+  <rect x="0.75" y="0.75" width="1198.5" height="358.5" rx="19.25"
+        fill="none" stroke="#2A3A57" stroke-width="1.5"/>
+
+  <!-- beta badge -->
+  <rect x="1036" y="30" width="134" height="34" rx="17"
+        fill="#38BDF8" fill-opacity="0.12" stroke="#38BDF8" stroke-opacity="0.45"/>
+  <text x="1103" y="52" text-anchor="middle"
+        font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif"
+        font-size="15" font-weight="700" letter-spacing="2.4" fill="#7DD3FC">BETA</text>
+
+  <!-- title -->
+  <text x="600" y="140" text-anchor="middle"
+        font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif"
+        font-size="64" font-weight="700" fill="#EAF2FF" letter-spacing="-0.5">Bionic Job Bridge</text>
+
+  <!-- tagline -->
+  <text x="600" y="186" text-anchor="middle"
+        font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif"
+        font-size="23" fill="#9FB3CD">Route coding jobs from Codex to Bionic — parked workers, zero idle tokens</text>
+
+  <!-- divider -->
+  <rect x="440" y="214" width="320" height="2" fill="url(#rule)"/>
+
+  <!-- flow motif -->
+  <g font-family="Segoe UI, Inter, system-ui, -apple-system, sans-serif" font-size="19" font-weight="600">
+
+    <!-- Codex -->
+    <rect x="266" y="252" width="176" height="56" rx="28"
+          fill="#FFFFFF" fill-opacity="0.05" stroke="url(#pillEdge)"/>
+    <circle cx="300" cy="280" r="6" fill="#38BDF8"/>
+    <text x="368" y="287" text-anchor="middle" fill="#DCE8F8">Codex</text>
+
+    <!-- spool -->
+    <rect x="500" y="252" width="200" height="56" rx="28"
+          fill="#38BDF8" fill-opacity="0.10" stroke="#38BDF8" stroke-opacity="0.40"/>
+    <text x="600" y="287" text-anchor="middle" fill="#BDE6FF">jobs/ spool</text>
+
+    <!-- Bionic -->
+    <rect x="758" y="252" width="176" height="56" rx="28"
+          fill="#FFFFFF" fill-opacity="0.05" stroke="url(#pillEdge)"/>
+    <circle cx="792" cy="280" r="6" fill="#A78BFA"/>
+    <text x="860" y="287" text-anchor="middle" fill="#DCE8F8">Bionic</text>
+
+    <!-- arrows -->
+    <line x1="450" y1="280" x2="492" y2="280" stroke="#5B7BA6" stroke-width="2" marker-end="url(#arrow)"/>
+    <line x1="708" y1="280" x2="750" y2="280" stroke="#5B7BA6" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- sublabels -->
+    <text x="471" y="332" text-anchor="middle" font-size="13" font-weight="400"
+          fill="#6F87A8" letter-spacing="1.2">SUBMIT</text>
+    <text x="729" y="332" text-anchor="middle" font-size="13" font-weight="400"
+          fill="#6F87A8" letter-spacing="1.2">CLAIM</text>
+  </g>
+</svg>
