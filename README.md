@@ -448,6 +448,7 @@ Bionic-Slave/
   install/                           AI-driven installers
     INSTALL-CODEX.md                 install the Codex side
     INSTALL-BIONIC.md                install the Bionic side
+    skills/codex/bionic/SKILL.md
     skills/codex/bionic-worker-control/SKILL.md
     skills/bionic/bionic-job-worker/SKILL.md
   jobs/                              runtime spool (created automatically)

@@ -14,8 +14,9 @@ for the full loop.
 1. A checkout of the bridge repo.
 2. The **`bionic-jobs` MCP server**, registered with Codex, so you can submit
    jobs to Bionic, poll their status, and read results.
-3. The **`bionic-worker-control` skill**, so you know how to check worker
-   liveness and (re)activate workers when none are running.
+3. Two **Codex skills**: `bionic` (a manual `$bionic <command>` wrapper over the
+   MCP tools) and `bionic-worker-control` (how to check worker liveness and
+   (re)activate workers when none are running).
 
 ## Step 0 — Check prerequisites
 
@@ -72,22 +73,29 @@ Expected: `enabled: true`, `transport: stdio`, with the paths you just used.
 If a `bionic-jobs` entry already exists and points somewhere stale, remove it
 first with `codex mcp remove bionic-jobs` and re-run `add`.
 
-## Step 3 — Install the skill
+## Step 3 — Install the two skills
 
 Codex skills are folders under `$CODEX_HOME/skills` (default `~/.codex/skills`),
-each containing a `SKILL.md`. Copy the packaged skill from the repo:
+each containing a `SKILL.md`. Copy both packaged skills from the repo:
 
 ```powershell
 $skills = Join-Path $env:USERPROFILE ".codex\skills"
-$dest   = Join-Path $skills "bionic-worker-control"
-New-Item -ItemType Directory -Force -Path $dest | Out-Null
-Copy-Item (Join-Path $repo "install\skills\codex\bionic-worker-control\SKILL.md") `
-          (Join-Path $dest "SKILL.md") -Force
+foreach ($name in @("bionic", "bionic-worker-control")) {
+    $dest = Join-Path $skills $name
+    New-Item -ItemType Directory -Force -Path $dest | Out-Null
+    Copy-Item (Join-Path $repo "install\skills\codex\$name\SKILL.md") `
+              (Join-Path $dest "SKILL.md") -Force
+}
 ```
 
-The folder name must match the `name:` in the skill's front matter
-(`bionic-worker-control`). If the user has set a custom `CODEX_HOME`, use
-`$env:CODEX_HOME\skills` instead.
+| Skill | Purpose |
+|---|---|
+| `bionic` | Manual `$bionic <command>` wrapper over the `bionic-jobs` tools (submit, list, status, wait, result, cancel, list_workers). |
+| `bionic-worker-control` | How to check worker liveness and (re)activate workers when none are running. |
+
+Each destination folder name must match the `name:` in that skill's front
+matter. If the user has set a custom `CODEX_HOME`, use `$env:CODEX_HOME\skills`
+instead.
 
 ## Step 4 — Verify
 
@@ -129,4 +137,4 @@ Do not submit any jobs until Bionic workers are running.
 | Handshake prints nothing | The Python path is wrong. Re-resolve it with `(Get-Command python).Source` and use the absolute path. |
 | Server starts but tools are missing in Codex | Codex was not restarted after `codex mcp add`. |
 | `jobs/` is missing | It is created automatically on the first `submit_job` or CLI call. |
-| Skill not appearing | The folder name must match the front-matter `name`. Check `~/.codex/skills/bionic-worker-control/SKILL.md` exists. |
+| Skill not appearing | The folder name must match the front-matter `name`. Check that both `~/.codex/skills/bionic/SKILL.md` and `~/.codex/skills/bionic-worker-control/SKILL.md` exist. |
