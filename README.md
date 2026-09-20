@@ -23,10 +23,28 @@ parked on the queue and consume **no tokens while idle**.
 > depends on Codex's computer-use driving the Bionic GUI and has not yet been
 > validated on a cold start. See [Beta limitations](#beta-limitations).
 
+## Install with your AI
+
+You do not need to download or configure anything by hand. Point an AI agent at
+these files and it will clone the repo, register the MCP server, and install the
+skills for you.
+
+**In Codex** — paste this:
+
+> Read https://raw.githubusercontent.com/neusse/Bionic-Slave/main/install/INSTALL-CODEX.md and install this for me.
+
+**In Bionic** — paste this:
+
+> Read https://raw.githubusercontent.com/neusse/Bionic-Slave/main/install/INSTALL-BIONIC.md and install this for me.
+
+Install **both sides** to get the full loop. Each guide is self-contained and
+clones the repo for you. Sources live in [`install/`](install/).
+
 ---
 
 ## Contents
 
+- [Install with your AI](#install-with-your-ai)
 - [Principles of operation](#principles-of-operation)
 - [Architecture](#architecture)
 - [Setup](#setup)
@@ -145,6 +163,9 @@ stateDiagram-v2
 ---
 
 ## Setup
+
+> Prefer to let an AI do this? See [Install with your AI](#install-with-your-ai).
+> The steps below are the manual equivalent.
 
 ### Prerequisites
 
@@ -424,6 +445,11 @@ Bionic-Slave/
   .gitignore                         ignores jobs/* except the marker
   docs/assets/
     bionic-slave-banner.svg          README hero banner
+  install/                           AI-driven installers
+    INSTALL-CODEX.md                 install the Codex side
+    INSTALL-BIONIC.md                install the Bionic side
+    skills/codex/bionic-worker-control/SKILL.md
+    skills/bionic/bionic-job-worker/SKILL.md
   jobs/                              runtime spool (created automatically)
     README.md                        "live queue — do not delete" marker
   bridge/
