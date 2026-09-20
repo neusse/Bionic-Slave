@@ -3,7 +3,7 @@ MCP server (stdio) that exposes the Bionic job spool to Codex.
 
 Register it in Codex with:
 
-    codex mcp add bionic-jobs -- py "C:\\Users\\georg\\Bionic-Projects\\Bionic-Slave\\bridge\\bionic_jobs_mcp.py"
+    codex mcp add bionic-jobs -- py "C:\\Users\\<username>\\Bionic-Projects\\Bionic-Slave\\bridge\\bionic_jobs_mcp.py"
 
 Codex then gains these tools:
 

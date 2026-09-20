@@ -160,7 +160,7 @@ This is what lets Codex submit jobs and see workers:
 
 ```powershell
 codex mcp add bionic-jobs -- "C:\Program Files\Python313\python.exe" `
-  "C:\Users\georg\Bionic-Projects\Bionic-Slave\bridge\bionic_jobs_mcp.py"
+  "C:\Users\<username>\Bionic-Projects\Bionic-Slave\bridge\bionic_jobs_mcp.py"
 ```
 
 Verify:
@@ -191,10 +191,10 @@ Or add it manually in Bionic's MCP settings:
   "enabled": true,
   "connection": {
     "type": "stdio",
-    "command": "C:\\Users\\georg\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe",
+    "command": "C:\\Users\\<username>\\AppData\\Local\\Programs\\OpenAI\\Codex\\bin\\codex.exe",
     "args": ["mcp-server"],
     "env": {},
-    "cwd": "C:\\Users\\georg\\Bionic-Projects\\Bionic-Slave"
+    "cwd": "C:\\Users\\<username>\\Bionic-Projects\\Bionic-Slave"
   }
 }
 ```
@@ -202,10 +202,10 @@ Or add it manually in Bionic's MCP settings:
 ### 3. Smoke test
 
 ```powershell
-cd C:\Users\georg\Bionic-Projects\Bionic-Slave
+cd C:\Users\<username>\Bionic-Projects\Bionic-Slave
 
 # Drop a harmless demo job
-py bridge\seed_demo_job.py --cwd "C:\Users\georg\Bionic-Projects\Bionic-Slave"
+py bridge\seed_demo_job.py --cwd "C:\Users\<username>\Bionic-Projects\Bionic-Slave"
 
 # Claim and finish it (normally a Bionic worker does this)
 py bridge\bionic_worker.py next --wait 0
@@ -247,7 +247,7 @@ Use the **`bionic-worker-control`** skill (installed at
 Ask Codex in natural language:
 
 > Submit a job to Bionic: fix the failing test in `src/parser.py` in
-> `C:\Users\georg\codex_projects\z-trading`. Use `submit_job`, then `wait_job`
+> `C:\Users\<username>\codex_projects\z-trading`. Use `submit_job`, then `wait_job`
 > with a 30s timeout and report the summary and changed files.
 
 Codex calls `submit_job`, then polls `wait_job` / `job_status` until the job is
